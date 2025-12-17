@@ -33,10 +33,12 @@ const UserSchema = new mongoose.Schema(
 const User = mongoose.model("User", UserSchema);
 
 // Start server
-app.listen(3001, () => {
-  console.log("Server running on http://localhost:3001");
-});
+const PORT = process.env.PORT || 3001;
 
+// Start server
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 // 1.3. Implement GET với Pagination + Search
 // Format: GET /api/users?page=1&limit=5&search=nguyen
 // Gợi ý:
